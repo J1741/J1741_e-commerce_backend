@@ -27,6 +27,13 @@ router.get('/:id', async (req, res) => {
         model: Product
       }]
     });
+
+    // handle case where category id doesn't exist
+    if (!categoryData) {
+      res.status(404).json({ message: 'No category found with this id!'});
+      return;
+    }
+
     res.status(200).json(categoryData);
   } catch (err) {
     res.status(500).json(err);
@@ -35,6 +42,7 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', (req, res) => {
   // create a new category
+
 });
 
 router.put('/:id', (req, res) => {
