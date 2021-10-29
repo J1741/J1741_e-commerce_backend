@@ -78,6 +78,7 @@ router.post('/', (req, res) => {
 });
 
 // update product
+// TODO: Figure out what's going on w/ this route
 router.put('/:id', (req, res) => {
   // update product data
   Product.update(req.body, {
@@ -119,10 +120,9 @@ router.put('/:id', (req, res) => {
     });
 });
 
+// delete one product by its `id` value
 router.delete('/:id', async (req, res) => {
-  // delete one product by its `id` value
 
-  // new stuff 
   try {
     const productData = await Product.destroy({
       where: { 
