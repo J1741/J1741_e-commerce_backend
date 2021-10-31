@@ -8,7 +8,7 @@ Technologies used by the application include the `dotenv`, `express`, `mysql2`, 
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [Tests](#tests)
+- [Application Demo](#application-demo)
 - [Questions](#questions)
 
 ## Installation
@@ -27,11 +27,11 @@ Step 2. Run the following command in the root of the project directory to instal
 ```
 npm i
 ```
-This will install the necessary node modules for the `dotenv`, `express`, `mysql2`, and `sequelize` packages.
+This will install the necessary dependencies for the application to run.
 
-Step 3. Rename the `.env.EXAMPLE` file to `.env`
+Step 3. Rename the `.env.EXAMPLE` file to `.env`. This will ensure the credentials we enter in Step 4 are not pushed up to GitHub.
 
-Step 4. In the newly renamed `.env` file: replace USERNAME with your local MySQL username, replace PASSWORD with your local MySQL password, save these changes to the file.
+Step 4. In the newly renamed `.env` file: replace the string USERNAME with your local MySQL username, replace the string PASSWORD with your local MySQL password, and save these changes to the file.
 
 Step 5. Create the `ecommerce_db` database by opening a terminal, navigating to the root of the project directory, logging into a mysql shell, and running the following command:
 ```
@@ -44,7 +44,7 @@ Step 6. Create tables in and seed the `ecommerce_db` by navigating to the root o
 ```
 npm run seed
 ```
-This will create four tables in the `ecommerce_db`: `category`, `product`, `product_tag`, and `tag` tables in the `ecommerce_db`, and seed each table with data that can be used for testing the application's API routes.
+This will create four tables in the `ecommerce_db`: `category`, `product`, `product_tag`, and `tag`, as well as seed each table with data that can be used for testing the application's API routes.
 
 ## Usage
 After you have completed the installation steps above, do the following to use the E-Commerce Backend application:
@@ -60,7 +60,7 @@ App listening on port 3001!
 
 Step 2. While the server is running, open your API testing platform and perform CRUD operations on the `ecommerce_db` by hitting the various GET, POST, PUT, and DELETE endpoints defined in the `./routes/api` folder.
 
-For example, the following API end points are available to perform CRUD operations on the category data:
+For example, the following API endpoints are available to perform CRUD operations on the category data:
 ```md
 # select all categories
 GET route at http://localhost:3001/api/categories
@@ -78,14 +78,14 @@ PUT route at http://localhost:3001/api/categories/:id
 DELETE route at http://localhost:3001/api/categories/:id
 ```
 
-**Note:** A JSON object with a `category_name` key-value pair must be provided in the request body of the above POST and PUT routes. For example:
+**Note:** A JSON object with a `category_name` key-value pair MUST be provided in the request body of the above POST and PUT routes for these routes to work. For example:
 ```json
 {
   "category_name": "coffee"
 }
 ```
 
-A similar set of API endpoints is provided to perform CRUD operations on the product and tag data in the database.
+A similar set of routes is provided to perform CRUD operations on the product and tag data in the database.
 
 Step 4. When you are finished running the application, hit CTRL-C on the keyboard. This will kill the application server and return to a regular terminal prompt.
 
@@ -94,8 +94,8 @@ Contributions to the E-Commerce Backend project are welcome!
 
 The project repo can be forked here: https://github.com/J1741/J1741_e-commerce_backend
 
-## Demo Video
-A demo of the application can be viewed here: 
+## Application Demo 
+A video demonstrating the application functionality can be viewed here (note this is an unlisted video, so it can ONLY be accessed via the following link):
 https://www.youtube.com/watch?v=m8OpHL7DOxU
 
 ## Questions
